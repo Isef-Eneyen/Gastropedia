@@ -20,6 +20,7 @@ public class Rol {
     @Column(name = "id")
     private Long id;
 
+    @NotBlank
     @Column(name = "rol")
     private String name;
 
