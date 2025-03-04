@@ -1,7 +1,7 @@
 package com.IsefEneyen.Gastropedia.Repositories;
 
 import com.IsefEneyen.Gastropedia.Models.Comment;
-import org.hibernate.type.descriptor.converter.spi.JpaAttributeConverter;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CommentRepository extends JpaAttributeConverter<Comment, Long> {
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }
