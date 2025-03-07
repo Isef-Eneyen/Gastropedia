@@ -2,7 +2,10 @@ package com.IsefEneyen.Gastropedia.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.List;
@@ -21,6 +24,7 @@ public class Category {
 
     @NotBlank
     @Column(name = "categories")
+    @Size(min = 3, max = 20)
     private String name;
 
     @JsonIgnore

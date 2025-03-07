@@ -23,16 +23,19 @@ public class User {
 
     @NotBlank
     @Column(name = "username", unique = true)
+    @Size(min = 3, max = 50)
     private String username;
 
     @NotBlank
     @Column(name = "email", unique = true)
     @Email
+    @Size(max = 50)
     private String email;
 
     @JsonIgnore
     @NotBlank
     @Column(name = "password")
+    @Size(min = 3)
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)

@@ -3,6 +3,7 @@ package com.IsefEneyen.Gastropedia.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Date;
@@ -22,6 +23,7 @@ public class Comment {
     @NotBlank
     @Column(name = "content", columnDefinition = "mediumtext")
     @Lob
+    @Size(min = 3, max = 400)
     private String content;
 
     @NotBlank

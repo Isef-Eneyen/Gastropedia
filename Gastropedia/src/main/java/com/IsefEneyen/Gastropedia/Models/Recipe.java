@@ -2,6 +2,7 @@ package com.IsefEneyen.Gastropedia.Models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Date;
@@ -21,6 +22,7 @@ public class Recipe {
 
     @NotBlank
     @Column(name = "title")
+    @Size(min = 3, max = 20)
     private String title;
 
     @NotBlank
