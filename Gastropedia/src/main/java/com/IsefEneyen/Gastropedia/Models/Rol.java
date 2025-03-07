@@ -11,6 +11,7 @@ import java.util.*;
 @Entity
 @Table(name = "roles")
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Rol {
