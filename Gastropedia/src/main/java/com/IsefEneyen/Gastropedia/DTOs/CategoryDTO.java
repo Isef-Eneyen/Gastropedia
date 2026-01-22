@@ -6,9 +6,9 @@ import jakarta.validation.constraints.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Getter
 @Setter
+
 public class CategoryDTO {
     @NotBlank
     @Size(min = 3, max = 20)
