@@ -3,6 +3,7 @@ package com.IsefEneyen.Gastropedia.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
@@ -27,7 +28,7 @@ public class Comment {
     @Size(min = 3, max = 400)
     private String content;
 
-    @NotBlank
+    @NotNull
     @Column(name = "create_date")
     private Date create_date;
 
