@@ -28,7 +28,6 @@ public class CategoryController {
 
         if(!categories.isEmpty())
         {
-            System.out.print("esta funcionando" + categories);
             return ResponseEntity.ok(categories);
         }
         else{
@@ -53,7 +52,6 @@ public class CategoryController {
     @PostMapping("/create")
     public ResponseEntity<?> CreateCategory(@RequestBody String category) throws JsonProcessingException {
         CategoryDTO dto = MAPPER.readValue(category, CategoryDTO.class);
-        System.out.println("DTO recibido: " + dto.getName());
 
         new Category();
         Category newCategory = Category.builder()
