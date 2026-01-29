@@ -1,27 +1,22 @@
-package com.IsefEneyen.Gastropedia.Models;
+package com.IsefEneyen.Gastropedia.DTOs;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 
-@Entity
-@Table(name = "recipes")
-@Builder
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Recipe {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-
+@Setter
+@Getter
+public class RecipeDTO {
     @NotBlank
     @Column(name = "title")
     @Size(min = 3, max = 20)
@@ -32,30 +27,18 @@ public class Recipe {
     @Column(name = "history", columnDefinition = "mediumtext")
     private String history;
 
-    @ManyToMany(mappedBy = "recipes")
-    private List<Ingredient> ingredients;
-
     @NotBlank
     @Lob
     @Column(name = "instruction", columnDefinition = "mediumtext")
     private String instruction;
 
-    @ManyToOne
-    private Category category;
-
     @Column(name = "image_url")
     private String image;
 
+    @NotNull
     @Column(name = "created_date")
     private Date date;
 
     @Column(name = "update_date")
     private Date updateDate;
-
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Column(name = "comments")
-    private List<Comment> comments;
-
-    @ManyToOne
-    private User user;
 }
